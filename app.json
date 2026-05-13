@@ -1,0 +1,34 @@
+{
+  "expo": {
+    "name": "潮汐放松",
+    "slug": "tidepro2",
+    "version": "1.0.0",
+    "scheme": "tidepro2",
+    "orientation": "portrait",
+    "icon": "./assets/extracted/app-icon/app-icon-1024.png",
+    "userInterfaceStyle": "automatic",
+    "splash": {
+      "resizeMode": "contain",
+      "backgroundColor": "#1a0a2e"
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.tidepro.app"
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/extracted/app-icon/adaptive-icon-foreground.png",
+        "backgroundImage": "./assets/extracted/app-icon/adaptive-icon-background.png"
+      },
+      "package": "com.tidepro.app"
+    },
+    "plugins": [
+      "expo-router",
+      "expo-asset",
+      "expo-font"
+    ]
+  }
+}
