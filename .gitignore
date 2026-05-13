@@ -13,3 +13,34 @@ npm-debug.*
 *.mobileprovision
 *.orig.*
 web-build/
+
+# Design reference / sprite sheets — not used by runtime (see constants/designAssets.ts)
+assets/extracted/backgrounds/screens/
+assets/extracted/previews/
+
+# Extracted PNGs not referenced by app code or app.json
+assets/extracted/backgrounds/covers/secondary_alarm_banner.png
+assets/extracted/app-icon/adaptive-icon-monochrome.png
+assets/extracted/ui-elements/focus_progress_ring.png
+assets/extracted/ui-elements/meditate_quote_card.png
+assets/extracted/ui-elements/search_bar_input.png
+assets/extracted/transparent-icons/alarm_clock_icon.png
+assets/extracted/transparent-icons/app_mark_circle.png
+assets/extracted/transparent-icons/back_arrow_circle.png
+assets/extracted/transparent-icons/breathe_check_badge.png
+assets/extracted/transparent-icons/crystal.png
+assets/extracted/transparent-icons/focus_check_badge.png
+assets/extracted/transparent-icons/leaf_branch.png
+assets/extracted/transparent-icons/minus_circle.png
+assets/extracted/transparent-icons/music_note.png
+assets/extracted/transparent-icons/plus_circle.png
+assets/extracted/transparent-icons/search_icon.png
+
+# App only bundles @phone backgrounds + sleep-background.png; regenerate full set via scripts/generate_page_backgrounds.py
+assets/generated/page-backgrounds/focus-background.png
+assets/generated/page-backgrounds/breathe-background.png
+assets/generated/page-backgrounds/meditate-background.png
+
+# Raw design board exports
+images/
+assets/images/
