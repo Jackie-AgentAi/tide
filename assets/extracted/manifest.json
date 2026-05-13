@@ -1,0 +1,1896 @@
+[
+  {
+    "name": "main_sleep_screen",
+    "source": "main",
+    "bbox": [
+      3,
+      2,
+      409,
+      926
+    ],
+    "category": "backgrounds/screens",
+    "transparent": false,
+    "background_mode": "white",
+    "threshold": 28,
+    "border": 3,
+    "trim": false,
+    "pad": 10,
+    "max_size": null,
+    "keep_largest_component": false,
+    "ellipse_mask": false,
+    "note": "主界面-睡眠",
+    "output": "assets\\extracted\\backgrounds\\screens\\main_sleep_screen.png",
+    "size": [
+      406,
+      924
+    ]
+  },
+  {
+    "name": "main_focus_screen",
+    "source": "main",
+    "bbox": [
+      429,
+      4,
+      833,
+      926
+    ],
+    "category": "backgrounds/screens",
+    "transparent": false,
+    "background_mode": "white",
+    "threshold": 28,
+    "border": 3,
+    "trim": false,
+    "pad": 10,
+    "max_size": null,
+    "keep_largest_component": false,
+    "ellipse_mask": false,
+    "note": "主界面-专注",
+    "output": "assets\\extracted\\backgrounds\\screens\\main_focus_screen.png",
+    "size": [
+      404,
+      922
+    ]
+  },
+  {
+    "name": "main_breathe_screen",
+    "source": "main",
+    "bbox": [
+      853,
+      4,
+      1258,
+      926
+    ],
+    "category": "backgrounds/screens",
+    "transparent": false,
+    "background_mode": "white",
+    "threshold": 28,
+    "border": 3,
+    "trim": false,
+    "pad": 10,
+    "max_size": null,
+    "keep_largest_component": false,
+    "ellipse_mask": false,
+    "note": "主界面-呼吸",
+    "output": "assets\\extracted\\backgrounds\\screens\\main_breathe_screen.png",
+    "size": [
+      405,
+      922
+    ]
+  },
+  {
+    "name": "main_meditate_screen",
+    "source": "main",
+    "bbox": [
+      1278,
+      4,
+      1683,
+      926
+    ],
+    "category": "backgrounds/screens",
+    "transparent": false,
+    "background_mode": "white",
+    "threshold": 28,
+    "border": 3,
+    "trim": false,
+    "pad": 10,
+    "max_size": null,
+    "keep_largest_component": false,
+    "ellipse_mask": false,
+    "note": "主界面-冥想",
+    "output": "assets\\extracted\\backgrounds\\screens\\main_meditate_screen.png",
+    "size": [
+      405,
+      922
+    ]
+  },
+  {
+    "name": "sleep_timer_screen",
+    "source": "secondary",
+    "bbox": [
+      218,
+      5,
+      483,
+      458
+    ],
+    "category": "backgrounds/screens",
+    "transparent": false,
+    "background_mode": "white",
+    "threshold": 28,
+    "border": 3,
+    "trim": false,
+    "pad": 10,
+    "max_size": null,
+    "keep_largest_component": false,
+    "ellipse_mask": false,
+    "note": "二级页-睡眠定时",
+    "output": "assets\\extracted\\backgrounds\\screens\\sleep_timer_screen.png",
+    "size": [
+      265,
+      453
+    ]
+  },
+  {
+    "name": "wake_alarm_screen",
+    "source": "secondary",
+    "bbox": [
+      493,
+      5,
+      762,
+      458
+    ],
+    "category": "backgrounds/screens",
+    "transparent": false,
+    "background_mode": "white",
+    "threshold": 28,
+    "border": 3,
+    "trim": false,
+    "pad": 10,
+    "max_size": null,
+    "keep_largest_component": false,
+    "ellipse_mask": false,
+    "note": "二级页-该起床了",
+    "output": "assets\\extracted\\backgrounds\\screens\\wake_alarm_screen.png",
+    "size": [
+      269,
+      453
+    ]
+  },
+  {
+    "name": "focus_running_screen",
+    "source": "secondary",
+    "bbox": [
+      774,
+      5,
+      1027,
+      458
+    ],
+    "category": "backgrounds/screens",
+    "transparent": false,
+    "background_mode": "white",
+    "threshold": 28,
+    "border": 3,
+    "trim": false,
+    "pad": 10,
+    "max_size": null,
+    "keep_largest_component": false,
+    "ellipse_mask": false,
+    "note": "二级页-专注中",
+    "output": "assets\\extracted\\backgrounds\\screens\\focus_running_screen.png",
+    "size": [
+      253,
+      453
+    ]
+  },
+  {
+    "name": "focus_complete_screen",
+    "source": "secondary",
+    "bbox": [
+      1040,
+      5,
+      1291,
+      458
+    ],
+    "category": "backgrounds/screens",
+    "transparent": false,
+    "background_mode": "white",
+    "threshold": 28,
+    "border": 3,
+    "trim": false,
+    "pad": 10,
+    "max_size": null,
+    "keep_largest_component": false,
+    "ellipse_mask": false,
+    "note": "二级页-专注完成",
+    "output": "assets\\extracted\\backgrounds\\screens\\focus_complete_screen.png",
+    "size": [
+      251,
+      453
+    ]
+  },
+  {
+    "name": "focus_sound_picker_screen",
+    "source": "secondary",
+    "bbox": [
+      219,
+      473,
+      481,
+      908
+    ],
+    "category": "backgrounds/screens",
+    "transparent": false,
+    "background_mode": "white",
+    "threshold": 28,
+    "border": 3,
+    "trim": false,
+    "pad": 10,
+    "max_size": null,
+    "keep_largest_component": false,
+    "ellipse_mask": false,
+    "note": "二级页-背景音",
+    "output": "assets\\extracted\\backgrounds\\screens\\focus_sound_picker_screen.png",
+    "size": [
+      262,
+      435
+    ]
+  },
+  {
+    "name": "breathe_complete_screen",
+    "source": "secondary",
+    "bbox": [
+      494,
+      472,
+      761,
+      908
+    ],
+    "category": "backgrounds/screens",
+    "transparent": false,
+    "background_mode": "white",
+    "threshold": 28,
+    "border": 3,
+    "trim": false,
+    "pad": 10,
+    "max_size": null,
+    "keep_largest_component": false,
+    "ellipse_mask": false,
+    "note": "二级页-呼吸完成",
+    "output": "assets\\extracted\\backgrounds\\screens\\breathe_complete_screen.png",
+    "size": [
+      267,
+      436
+    ]
+  },
+  {
+    "name": "meditate_complete_screen",
+    "source": "secondary",
+    "bbox": [
+      773,
+      473,
+      1027,
+      908
+    ],
+    "category": "backgrounds/screens",
+    "transparent": false,
+    "background_mode": "white",
+    "threshold": 28,
+    "border": 3,
+    "trim": false,
+    "pad": 10,
+    "max_size": null,
+    "keep_largest_component": false,
+    "ellipse_mask": false,
+    "note": "二级页-冥想完成",
+    "output": "assets\\extracted\\backgrounds\\screens\\meditate_complete_screen.png",
+    "size": [
+      254,
+      435
+    ]
+  },
+  {
+    "name": "settings_screen",
+    "source": "secondary",
+    "bbox": [
+      1039,
+      473,
+      1291,
+      908
+    ],
+    "category": "backgrounds/screens",
+    "transparent": false,
+    "background_mode": "white",
+    "threshold": 28,
+    "border": 3,
+    "trim": false,
+    "pad": 10,
+    "max_size": null,
+    "keep_largest_component": false,
+    "ellipse_mask": false,
+    "note": "二级页-设置",
+    "output": "assets\\extracted\\backgrounds\\screens\\settings_screen.png",
+    "size": [
+      252,
+      435
+    ]
+  },
+  {
+    "name": "sleep_cover_ocean_moon",
+    "source": "main",
+    "bbox": [
+      34,
+      293,
+      191,
+      421
+    ],
+    "category": "backgrounds/covers",
+    "transparent": false,
+    "background_mode": "white",
+    "threshold": 28,
+    "border": 3,
+    "trim": false,
+    "pad": 10,
+    "max_size": 768,
+    "keep_largest_component": false,
+    "ellipse_mask": false,
+    "note": "",
+    "output": "assets\\extracted\\backgrounds\\covers\\sleep_cover_ocean_moon.png",
+    "size": [
+      768,
+      626
+    ]
+  },
+  {
+    "name": "sleep_cover_rain_window",
+    "source": "main",
+    "bbox": [
+      218,
+      293,
+      381,
+      421
+    ],
+    "category": "backgrounds/covers",
+    "transparent": false,
+    "background_mode": "white",
+    "threshold": 28,
+    "border": 3,
+    "trim": false,
+    "pad": 10,
+    "max_size": 768,
+    "keep_largest_component": false,
+    "ellipse_mask": false,
+    "note": "",
+    "output": "assets\\extracted\\backgrounds\\covers\\sleep_cover_rain_window.png",
+    "size": [
+      768,
+      603
+    ]
+  },
+  {
+    "name": "sleep_cover_fireflies_forest",
+    "source": "main",
+    "bbox": [
+      35,
+      499,
+      193,
+      621
+    ],
+    "category": "backgrounds/covers",
+    "transparent": false,
+    "background_mode": "white",
+    "threshold": 28,
+    "border": 3,
+    "trim": false,
+    "pad": 10,
+    "max_size": 768,
+    "keep_largest_component": false,
+    "ellipse_mask": false,
+    "note": "",
+    "output": "assets\\extracted\\backgrounds\\covers\\sleep_cover_fireflies_forest.png",
+    "size": [
+      768,
+      593
+    ]
+  },
+  {
+    "name": "sleep_cover_cat_purr",
+    "source": "main",
+    "bbox": [
+      219,
+      499,
+      382,
+      621
+    ],
+    "category": "backgrounds/covers",
+    "transparent": false,
+    "background_mode": "white",
+    "threshold": 28,
+    "border": 3,
+    "trim": false,
+    "pad": 10,
+    "max_size": 768,
+    "keep_largest_component": false,
+    "ellipse_mask": false,
+    "note": "",
+    "output": "assets\\extracted\\backgrounds\\covers\\sleep_cover_cat_purr.png",
+    "size": [
+      768,
+      575
+    ]
+  },
+  {
+    "name": "focus_cover_pink_piano",
+    "source": "main",
+    "bbox": [
+      454,
+      582,
+      550,
+      688
+    ],
+    "category": "backgrounds/covers",
+    "transparent": false,
+    "background_mode": "white",
+    "threshold": 28,
+    "border": 3,
+    "trim": false,
+    "pad": 10,
+    "max_size": 768,
+    "keep_largest_component": false,
+    "ellipse_mask": false,
+    "note": "",
+    "output": "assets\\extracted\\backgrounds\\covers\\focus_cover_pink_piano.png",
+    "size": [
+      696,
+      768
+    ]
+  },
+  {
+    "name": "focus_cover_aqua_waves",
+    "source": "main",
+    "bbox": [
+      558,
+      582,
+      629,
+      688
+    ],
+    "category": "backgrounds/covers",
+    "transparent": false,
+    "background_mode": "white",
+    "threshold": 28,
+    "border": 3,
+    "trim": false,
+    "pad": 10,
+    "max_size": 768,
+    "keep_largest_component": false,
+    "ellipse_mask": false,
+    "note": "",
+    "output": "assets\\extracted\\backgrounds\\covers\\focus_cover_aqua_waves.png",
+    "size": [
+      514,
+      768
+    ]
+  },
+  {
+    "name": "focus_cover_coffee",
+    "source": "main",
+    "bbox": [
+      637,
+      582,
+      708,
+      688
+    ],
+    "category": "backgrounds/covers",
+    "transparent": false,
+    "background_mode": "white",
+    "threshold": 28,
+    "border": 3,
+    "trim": false,
+    "pad": 10,
+    "max_size": 768,
+    "keep_largest_component": false,
+    "ellipse_mask": false,
+    "note": "",
+    "output": "assets\\extracted\\backgrounds\\covers\\focus_cover_coffee.png",
+    "size": [
+      514,
+      768
+    ]
+  },
+  {
+    "name": "focus_cover_mist_forest",
+    "source": "main",
+    "bbox": [
+      718,
+      582,
+      789,
+      688
+    ],
+    "category": "backgrounds/covers",
+    "transparent": false,
+    "background_mode": "white",
+    "threshold": 28,
+    "border": 3,
+    "trim": false,
+    "pad": 10,
+    "max_size": 768,
+    "keep_largest_component": false,
+    "ellipse_mask": false,
+    "note": "",
+    "output": "assets\\extracted\\backgrounds\\covers\\focus_cover_mist_forest.png",
+    "size": [
+      514,
+      768
+    ]
+  },
+  {
+    "name": "meditate_cover_quick_sleep",
+    "source": "main",
+    "bbox": [
+      1308,
+      266,
+      1442,
+      403
+    ],
+    "category": "backgrounds/covers",
+    "transparent": false,
+    "background_mode": "white",
+    "threshold": 28,
+    "border": 3,
+    "trim": false,
+    "pad": 10,
+    "max_size": 768,
+    "keep_largest_component": false,
+    "ellipse_mask": false,
+    "note": "",
+    "output": "assets\\extracted\\backgrounds\\covers\\meditate_cover_quick_sleep.png",
+    "size": [
+      751,
+      768
+    ]
+  },
+  {
+    "name": "meditate_cover_exam_stress",
+    "source": "main",
+    "bbox": [
+      1478,
+      266,
+      1613,
+      403
+    ],
+    "category": "backgrounds/covers",
+    "transparent": false,
+    "background_mode": "white",
+    "threshold": 28,
+    "border": 3,
+    "trim": false,
+    "pad": 10,
+    "max_size": 768,
+    "keep_largest_component": false,
+    "ellipse_mask": false,
+    "note": "",
+    "output": "assets\\extracted\\backgrounds\\covers\\meditate_cover_exam_stress.png",
+    "size": [
+      757,
+      768
+    ]
+  },
+  {
+    "name": "meditate_cover_breath_practice",
+    "source": "main",
+    "bbox": [
+      1308,
+      494,
+      1444,
+      633
+    ],
+    "category": "backgrounds/covers",
+    "transparent": false,
+    "background_mode": "white",
+    "threshold": 28,
+    "border": 3,
+    "trim": false,
+    "pad": 10,
+    "max_size": 768,
+    "keep_largest_component": false,
+    "ellipse_mask": false,
+    "note": "",
+    "output": "assets\\extracted\\backgrounds\\covers\\meditate_cover_breath_practice.png",
+    "size": [
+      751,
+      768
+    ]
+  },
+  {
+    "name": "meditate_cover_body_scan",
+    "source": "main",
+    "bbox": [
+      1478,
+      494,
+      1612,
+      633
+    ],
+    "category": "backgrounds/covers",
+    "transparent": false,
+    "background_mode": "white",
+    "threshold": 28,
+    "border": 3,
+    "trim": false,
+    "pad": 10,
+    "max_size": 768,
+    "keep_largest_component": false,
+    "ellipse_mask": false,
+    "note": "",
+    "output": "assets\\extracted\\backgrounds\\covers\\meditate_cover_body_scan.png",
+    "size": [
+      740,
+      768
+    ]
+  },
+  {
+    "name": "secondary_alarm_banner",
+    "source": "secondary",
+    "bbox": [
+      546,
+      199,
+      733,
+      333
+    ],
+    "category": "backgrounds/covers",
+    "transparent": false,
+    "background_mode": "white",
+    "threshold": 28,
+    "border": 3,
+    "trim": false,
+    "pad": 10,
+    "max_size": 1024,
+    "keep_largest_component": false,
+    "ellipse_mask": false,
+    "note": "",
+    "output": "assets\\extracted\\backgrounds\\covers\\secondary_alarm_banner.png",
+    "size": [
+      1024,
+      734
+    ]
+  },
+  {
+    "name": "secondary_meditate_moon_banner",
+    "source": "secondary",
+    "bbox": [
+      799,
+      569,
+      1000,
+      651
+    ],
+    "category": "backgrounds/covers",
+    "transparent": false,
+    "background_mode": "white",
+    "threshold": 28,
+    "border": 3,
+    "trim": false,
+    "pad": 10,
+    "max_size": 1024,
+    "keep_largest_component": false,
+    "ellipse_mask": false,
+    "note": "",
+    "output": "assets\\extracted\\backgrounds\\covers\\secondary_meditate_moon_banner.png",
+    "size": [
+      1024,
+      418
+    ]
+  },
+  {
+    "name": "tab_sleep_active",
+    "source": "main",
+    "bbox": [
+      23,
+      804,
+      83,
+      861
+    ],
+    "category": "transparent-icons",
+    "transparent": true,
+    "background_mode": "white",
+    "threshold": 28,
+    "border": 3,
+    "trim": true,
+    "pad": 10,
+    "max_size": 512,
+    "keep_largest_component": true,
+    "ellipse_mask": false,
+    "note": "底部Tab-睡眠激活",
+    "output": "assets\\extracted\\transparent-icons\\tab_sleep_active.png",
+    "size": [
+      485,
+      512
+    ]
+  },
+  {
+    "name": "tab_focus_active",
+    "source": "main",
+    "bbox": [
+      548,
+      806,
+      611,
+      861
+    ],
+    "category": "transparent-icons",
+    "transparent": true,
+    "background_mode": "white",
+    "threshold": 28,
+    "border": 3,
+    "trim": true,
+    "pad": 10,
+    "max_size": 512,
+    "keep_largest_component": true,
+    "ellipse_mask": false,
+    "note": "底部Tab-专注激活",
+    "output": "assets\\extracted\\transparent-icons\\tab_focus_active.png",
+    "size": [
+      512,
+      447
+    ]
+  },
+  {
+    "name": "tab_breathe_active",
+    "source": "main",
+    "bbox": [
+      1064,
+      806,
+      1120,
+      861
+    ],
+    "category": "transparent-icons",
+    "transparent": true,
+    "background_mode": "white",
+    "threshold": 28,
+    "border": 3,
+    "trim": true,
+    "pad": 10,
+    "max_size": 512,
+    "keep_largest_component": true,
+    "ellipse_mask": false,
+    "note": "底部Tab-呼吸激活",
+    "output": "assets\\extracted\\transparent-icons\\tab_breathe_active.png",
+    "size": [
+      512,
+      512
+    ]
+  },
+  {
+    "name": "tab_meditate_active",
+    "source": "main",
+    "bbox": [
+      1581,
+      806,
+      1638,
+      861
+    ],
+    "category": "transparent-icons",
+    "transparent": true,
+    "background_mode": "white",
+    "threshold": 28,
+    "border": 3,
+    "trim": true,
+    "pad": 10,
+    "max_size": 512,
+    "keep_largest_component": true,
+    "ellipse_mask": false,
+    "note": "底部Tab-冥想激活",
+    "output": "assets\\extracted\\transparent-icons\\tab_meditate_active.png",
+    "size": [
+      430,
+      512
+    ]
+  },
+  {
+    "name": "tab_sleep_outline",
+    "source": "main",
+    "bbox": [
+      450,
+      806,
+      505,
+      861
+    ],
+    "category": "transparent-icons",
+    "transparent": true,
+    "background_mode": "white",
+    "threshold": 28,
+    "border": 3,
+    "trim": true,
+    "pad": 10,
+    "max_size": 512,
+    "keep_largest_component": true,
+    "ellipse_mask": false,
+    "note": "底部Tab-睡眠线框",
+    "output": "assets\\extracted\\transparent-icons\\tab_sleep_outline.png",
+    "size": [
+      420,
+      512
+    ]
+  },
+  {
+    "name": "tab_focus_outline",
+    "source": "main",
+    "bbox": [
+      129,
+      806,
+      184,
+      861
+    ],
+    "category": "transparent-icons",
+    "transparent": true,
+    "background_mode": "white",
+    "threshold": 28,
+    "border": 3,
+    "trim": true,
+    "pad": 10,
+    "max_size": 512,
+    "keep_largest_component": true,
+    "ellipse_mask": false,
+    "note": "底部Tab-专注线框",
+    "output": "assets\\extracted\\transparent-icons\\tab_focus_outline.png",
+    "size": [
+      502,
+      512
+    ]
+  },
+  {
+    "name": "tab_breathe_outline",
+    "source": "main",
+    "bbox": [
+      222,
+      806,
+      278,
+      861
+    ],
+    "category": "transparent-icons",
+    "transparent": true,
+    "background_mode": "white",
+    "threshold": 28,
+    "border": 3,
+    "trim": true,
+    "pad": 10,
+    "max_size": 512,
+    "keep_largest_component": true,
+    "ellipse_mask": false,
+    "note": "底部Tab-呼吸线框",
+    "output": "assets\\extracted\\transparent-icons\\tab_breathe_outline.png",
+    "size": [
+      512,
+      483
+    ]
+  },
+  {
+    "name": "tab_meditate_outline",
+    "source": "main",
+    "bbox": [
+      336,
+      806,
+      392,
+      861
+    ],
+    "category": "transparent-icons",
+    "transparent": true,
+    "background_mode": "white",
+    "threshold": 28,
+    "border": 3,
+    "trim": true,
+    "pad": 10,
+    "max_size": 512,
+    "keep_largest_component": true,
+    "ellipse_mask": false,
+    "note": "底部Tab-冥想线框",
+    "output": "assets\\extracted\\transparent-icons\\tab_meditate_outline.png",
+    "size": [
+      387,
+      512
+    ]
+  },
+  {
+    "name": "back_arrow_circle",
+    "source": "secondary",
+    "bbox": [
+      224,
+      33,
+      268,
+      77
+    ],
+    "category": "transparent-icons",
+    "transparent": true,
+    "background_mode": "edge",
+    "threshold": 34,
+    "border": 3,
+    "trim": true,
+    "pad": 10,
+    "max_size": 512,
+    "keep_largest_component": true,
+    "ellipse_mask": false,
+    "note": "",
+    "output": "assets\\extracted\\transparent-icons\\back_arrow_circle.png",
+    "size": [
+      500,
+      512
+    ]
+  },
+  {
+    "name": "search_icon",
+    "source": "secondary",
+    "bbox": [
+      244,
+      558,
+      263,
+      578
+    ],
+    "category": "transparent-icons",
+    "transparent": true,
+    "background_mode": "edge",
+    "threshold": 50,
+    "border": 3,
+    "trim": true,
+    "pad": 10,
+    "max_size": 512,
+    "keep_largest_component": true,
+    "ellipse_mask": false,
+    "note": "",
+    "output": "assets\\extracted\\transparent-icons\\search_icon.png",
+    "size": [
+      486,
+      512
+    ]
+  },
+  {
+    "name": "gear_icon",
+    "source": "main",
+    "bbox": [
+      1186,
+      72,
+      1234,
+      119
+    ],
+    "category": "transparent-icons",
+    "transparent": true,
+    "background_mode": "edge",
+    "threshold": 35,
+    "border": 3,
+    "trim": true,
+    "pad": 10,
+    "max_size": 512,
+    "keep_largest_component": true,
+    "ellipse_mask": false,
+    "note": "",
+    "output": "assets\\extracted\\transparent-icons\\gear_icon.png",
+    "size": [
+      512,
+      512
+    ]
+  },
+  {
+    "name": "plus_circle",
+    "source": "secondary",
+    "bbox": [
+      413,
+      151,
+      444,
+      183
+    ],
+    "category": "transparent-icons",
+    "transparent": true,
+    "background_mode": "white",
+    "threshold": 28,
+    "border": 3,
+    "trim": true,
+    "pad": 10,
+    "max_size": 512,
+    "keep_largest_component": true,
+    "ellipse_mask": false,
+    "note": "",
+    "output": "assets\\extracted\\transparent-icons\\plus_circle.png",
+    "size": [
+      496,
+      512
+    ]
+  },
+  {
+    "name": "minus_circle",
+    "source": "secondary",
+    "bbox": [
+      258,
+      151,
+      290,
+      183
+    ],
+    "category": "transparent-icons",
+    "transparent": true,
+    "background_mode": "white",
+    "threshold": 28,
+    "border": 3,
+    "trim": true,
+    "pad": 10,
+    "max_size": 512,
+    "keep_largest_component": true,
+    "ellipse_mask": false,
+    "note": "",
+    "output": "assets\\extracted\\transparent-icons\\minus_circle.png",
+    "size": [
+      512,
+      512
+    ]
+  },
+  {
+    "name": "music_note",
+    "source": "secondary",
+    "bbox": [
+      696,
+      219,
+      724,
+      249
+    ],
+    "category": "transparent-icons",
+    "transparent": true,
+    "background_mode": "edge",
+    "threshold": 42,
+    "border": 3,
+    "trim": true,
+    "pad": 10,
+    "max_size": 512,
+    "keep_largest_component": true,
+    "ellipse_mask": false,
+    "note": "",
+    "output": "assets\\extracted\\transparent-icons\\music_note.png",
+    "size": [
+      459,
+      512
+    ]
+  },
+  {
+    "name": "pause_circle",
+    "source": "main",
+    "bbox": [
+      320,
+      715,
+      380,
+      778
+    ],
+    "category": "transparent-icons",
+    "transparent": true,
+    "background_mode": "edge",
+    "threshold": 42,
+    "border": 3,
+    "trim": true,
+    "pad": 10,
+    "max_size": 512,
+    "keep_largest_component": true,
+    "ellipse_mask": false,
+    "note": "当前播放-暂停按钮",
+    "output": "assets\\extracted\\transparent-icons\\pause_circle.png",
+    "size": [
+      495,
+      512
+    ]
+  },
+  {
+    "name": "playing_equalizer_badge",
+    "source": "main",
+    "bbox": [
+      340,
+      499,
+      378,
+      537
+    ],
+    "category": "transparent-icons",
+    "transparent": true,
+    "background_mode": "none",
+    "threshold": 28,
+    "border": 3,
+    "trim": true,
+    "pad": 10,
+    "max_size": 512,
+    "keep_largest_component": false,
+    "ellipse_mask": true,
+    "note": "播放中-均衡器角标",
+    "output": "assets\\extracted\\transparent-icons\\playing_equalizer_badge.png",
+    "size": [
+      512,
+      512
+    ]
+  },
+  {
+    "name": "focus_timer_clock_tiny",
+    "source": "main",
+    "bbox": [
+      558,
+      390,
+      580,
+      413
+    ],
+    "category": "transparent-icons",
+    "transparent": true,
+    "background_mode": "edge",
+    "threshold": 38,
+    "border": 3,
+    "trim": true,
+    "pad": 10,
+    "max_size": 512,
+    "keep_largest_component": true,
+    "ellipse_mask": false,
+    "note": "专注计时-小时钟",
+    "output": "assets\\extracted\\transparent-icons\\focus_timer_clock_tiny.png",
+    "size": [
+      490,
+      512
+    ]
+  },
+  {
+    "name": "sleep_timer_music_row_icon",
+    "source": "secondary",
+    "bbox": [
+      257,
+      327,
+      283,
+      352
+    ],
+    "category": "transparent-icons",
+    "transparent": true,
+    "background_mode": "edge",
+    "threshold": 42,
+    "border": 3,
+    "trim": true,
+    "pad": 10,
+    "max_size": 512,
+    "keep_largest_component": true,
+    "ellipse_mask": false,
+    "note": "睡眠定时-音乐行图标",
+    "output": "assets\\extracted\\transparent-icons\\sleep_timer_music_row_icon.png",
+    "size": [
+      471,
+      512
+    ]
+  },
+  {
+    "name": "alarm_clock_icon",
+    "source": "secondary",
+    "bbox": [
+      580,
+      213,
+      675,
+      309
+    ],
+    "category": "transparent-icons",
+    "transparent": true,
+    "background_mode": "edge",
+    "threshold": 42,
+    "border": 3,
+    "trim": true,
+    "pad": 10,
+    "max_size": 768,
+    "keep_largest_component": true,
+    "ellipse_mask": false,
+    "note": "",
+    "output": "assets\\extracted\\transparent-icons\\alarm_clock_icon.png",
+    "size": [
+      768,
+      715
+    ]
+  },
+  {
+    "name": "focus_check_badge",
+    "source": "secondary",
+    "bbox": [
+      1087,
+      82,
+      1188,
+      183
+    ],
+    "category": "transparent-icons",
+    "transparent": true,
+    "background_mode": "edge",
+    "threshold": 38,
+    "border": 3,
+    "trim": true,
+    "pad": 10,
+    "max_size": 768,
+    "keep_largest_component": true,
+    "ellipse_mask": false,
+    "note": "",
+    "output": "assets\\extracted\\transparent-icons\\focus_check_badge.png",
+    "size": [
+      616,
+      768
+    ]
+  },
+  {
+    "name": "breathe_check_badge",
+    "source": "secondary",
+    "bbox": [
+      543,
+      514,
+      715,
+      686
+    ],
+    "category": "transparent-icons",
+    "transparent": true,
+    "background_mode": "edge",
+    "threshold": 40,
+    "border": 3,
+    "trim": true,
+    "pad": 10,
+    "max_size": 768,
+    "keep_largest_component": true,
+    "ellipse_mask": false,
+    "note": "",
+    "output": "assets\\extracted\\transparent-icons\\breathe_check_badge.png",
+    "size": [
+      768,
+      646
+    ]
+  },
+  {
+    "name": "focus_mode_tile_icon",
+    "source": "secondary",
+    "bbox": [
+      801,
+      268,
+      833,
+      298
+    ],
+    "category": "transparent-icons",
+    "transparent": true,
+    "background_mode": "edge",
+    "threshold": 36,
+    "border": 3,
+    "trim": true,
+    "pad": 10,
+    "max_size": 512,
+    "keep_largest_component": true,
+    "ellipse_mask": false,
+    "note": "专注中-沉浸模式图标",
+    "output": "assets\\extracted\\transparent-icons\\focus_mode_tile_icon.png",
+    "size": [
+      512,
+      480
+    ]
+  },
+  {
+    "name": "focus_music_tile_icon",
+    "source": "secondary",
+    "bbox": [
+      801,
+      310,
+      833,
+      340
+    ],
+    "category": "transparent-icons",
+    "transparent": true,
+    "background_mode": "edge",
+    "threshold": 36,
+    "border": 3,
+    "trim": true,
+    "pad": 10,
+    "max_size": 512,
+    "keep_largest_component": true,
+    "ellipse_mask": false,
+    "note": "专注中-背景音图标",
+    "output": "assets\\extracted\\transparent-icons\\focus_music_tile_icon.png",
+    "size": [
+      512,
+      480
+    ]
+  },
+  {
+    "name": "wave_icon_box_breath",
+    "source": "main",
+    "bbox": [
+      907,
+      219,
+      981,
+      259
+    ],
+    "category": "transparent-icons",
+    "transparent": true,
+    "background_mode": "edge",
+    "threshold": 30,
+    "border": 3,
+    "trim": true,
+    "pad": 10,
+    "max_size": 512,
+    "keep_largest_component": true,
+    "ellipse_mask": false,
+    "note": "",
+    "output": "assets\\extracted\\transparent-icons\\wave_icon_box_breath.png",
+    "size": [
+      512,
+      297
+    ]
+  },
+  {
+    "name": "wave_icon_relax_breath",
+    "source": "main",
+    "bbox": [
+      1028,
+      218,
+      1100,
+      260
+    ],
+    "category": "transparent-icons",
+    "transparent": true,
+    "background_mode": "edge",
+    "threshold": 30,
+    "border": 3,
+    "trim": true,
+    "pad": 10,
+    "max_size": 512,
+    "keep_largest_component": true,
+    "ellipse_mask": false,
+    "note": "",
+    "output": "assets\\extracted\\transparent-icons\\wave_icon_relax_breath.png",
+    "size": [
+      512,
+      353
+    ]
+  },
+  {
+    "name": "wave_icon_balance_breath",
+    "source": "main",
+    "bbox": [
+      1147,
+      218,
+      1217,
+      259
+    ],
+    "category": "transparent-icons",
+    "transparent": true,
+    "background_mode": "edge",
+    "threshold": 30,
+    "border": 3,
+    "trim": true,
+    "pad": 10,
+    "max_size": 512,
+    "keep_largest_component": true,
+    "ellipse_mask": false,
+    "note": "",
+    "output": "assets\\extracted\\transparent-icons\\wave_icon_balance_breath.png",
+    "size": [
+      512,
+      368
+    ]
+  },
+  {
+    "name": "leaf_branch",
+    "source": "secondary",
+    "bbox": [
+      1181,
+      508,
+      1283,
+      604
+    ],
+    "category": "transparent-icons",
+    "transparent": true,
+    "background_mode": "edge",
+    "threshold": 55,
+    "border": 3,
+    "trim": true,
+    "pad": 10,
+    "max_size": 768,
+    "keep_largest_component": true,
+    "ellipse_mask": false,
+    "note": "",
+    "output": "assets\\extracted\\transparent-icons\\leaf_branch.png",
+    "size": [
+      768,
+      486
+    ]
+  },
+  {
+    "name": "crystal",
+    "source": "secondary",
+    "bbox": [
+      950,
+      724,
+      1014,
+      803
+    ],
+    "category": "transparent-icons",
+    "transparent": true,
+    "background_mode": "edge",
+    "threshold": 34,
+    "border": 3,
+    "trim": true,
+    "pad": 10,
+    "max_size": 768,
+    "keep_largest_component": true,
+    "ellipse_mask": false,
+    "note": "",
+    "output": "assets\\extracted\\transparent-icons\\crystal.png",
+    "size": [
+      673,
+      768
+    ]
+  },
+  {
+    "name": "app_mark_circle",
+    "source": "secondary",
+    "bbox": [
+      1064,
+      572,
+      1121,
+      631
+    ],
+    "category": "transparent-icons",
+    "transparent": true,
+    "background_mode": "edge",
+    "threshold": 36,
+    "border": 3,
+    "trim": true,
+    "pad": 10,
+    "max_size": 768,
+    "keep_largest_component": true,
+    "ellipse_mask": false,
+    "note": "设置页App标识",
+    "output": "assets\\extracted\\transparent-icons\\app_mark_circle.png",
+    "size": [
+      742,
+      768
+    ]
+  },
+  {
+    "name": "settings_bell_icon",
+    "source": "secondary",
+    "bbox": [
+      1060,
+      650,
+      1100,
+      690
+    ],
+    "category": "transparent-icons",
+    "transparent": true,
+    "background_mode": "edge",
+    "threshold": 45,
+    "border": 3,
+    "trim": true,
+    "pad": 10,
+    "max_size": 512,
+    "keep_largest_component": true,
+    "ellipse_mask": false,
+    "note": "设置-通知提醒",
+    "output": "assets\\extracted\\transparent-icons\\settings_bell_icon.png",
+    "size": [
+      512,
+      499
+    ]
+  },
+  {
+    "name": "settings_music_icon",
+    "source": "secondary",
+    "bbox": [
+      1060,
+      692,
+      1100,
+      732
+    ],
+    "category": "transparent-icons",
+    "transparent": true,
+    "background_mode": "edge",
+    "threshold": 45,
+    "border": 3,
+    "trim": true,
+    "pad": 10,
+    "max_size": 512,
+    "keep_largest_component": true,
+    "ellipse_mask": false,
+    "note": "设置-音频播放",
+    "output": "assets\\extracted\\transparent-icons\\settings_music_icon.png",
+    "size": [
+      512,
+      470
+    ]
+  },
+  {
+    "name": "settings_theme_icon",
+    "source": "secondary",
+    "bbox": [
+      1060,
+      737,
+      1100,
+      777
+    ],
+    "category": "transparent-icons",
+    "transparent": true,
+    "background_mode": "edge",
+    "threshold": 45,
+    "border": 3,
+    "trim": true,
+    "pad": 10,
+    "max_size": 512,
+    "keep_largest_component": true,
+    "ellipse_mask": false,
+    "note": "设置-外观主题",
+    "output": "assets\\extracted\\transparent-icons\\settings_theme_icon.png",
+    "size": [
+      512,
+      415
+    ]
+  },
+  {
+    "name": "settings_privacy_icon",
+    "source": "secondary",
+    "bbox": [
+      1060,
+      779,
+      1100,
+      819
+    ],
+    "category": "transparent-icons",
+    "transparent": true,
+    "background_mode": "edge",
+    "threshold": 45,
+    "border": 3,
+    "trim": true,
+    "pad": 10,
+    "max_size": 512,
+    "keep_largest_component": true,
+    "ellipse_mask": false,
+    "note": "设置-数据与隐私",
+    "output": "assets\\extracted\\transparent-icons\\settings_privacy_icon.png",
+    "size": [
+      512,
+      354
+    ]
+  },
+  {
+    "name": "settings_info_icon",
+    "source": "secondary",
+    "bbox": [
+      1060,
+      819,
+      1100,
+      859
+    ],
+    "category": "transparent-icons",
+    "transparent": true,
+    "background_mode": "edge",
+    "threshold": 45,
+    "border": 3,
+    "trim": true,
+    "pad": 10,
+    "max_size": 512,
+    "keep_largest_component": true,
+    "ellipse_mask": false,
+    "note": "设置-关于应用",
+    "output": "assets\\extracted\\transparent-icons\\settings_info_icon.png",
+    "size": [
+      512,
+      360
+    ]
+  },
+  {
+    "name": "chevron_right",
+    "source": "secondary",
+    "bbox": [
+      1245,
+      596,
+      1273,
+      623
+    ],
+    "category": "transparent-icons",
+    "transparent": true,
+    "background_mode": "edge",
+    "threshold": 48,
+    "border": 3,
+    "trim": true,
+    "pad": 10,
+    "max_size": 512,
+    "keep_largest_component": true,
+    "ellipse_mask": false,
+    "note": "列表右箭头",
+    "output": "assets\\extracted\\transparent-icons\\chevron_right.png",
+    "size": [
+      512,
+      473
+    ]
+  },
+  {
+    "name": "focus_timer_card",
+    "source": "main",
+    "bbox": [
+      449,
+      194,
+      803,
+      510
+    ],
+    "category": "ui-elements",
+    "transparent": false,
+    "background_mode": "white",
+    "threshold": 28,
+    "border": 3,
+    "trim": false,
+    "pad": 10,
+    "max_size": 1280,
+    "keep_largest_component": false,
+    "ellipse_mask": false,
+    "note": "",
+    "output": "assets\\extracted\\ui-elements\\focus_timer_card.png",
+    "size": [
+      1280,
+      1143
+    ]
+  },
+  {
+    "name": "focus_segment_control",
+    "source": "main",
+    "bbox": [
+      499,
+      226,
+      757,
+      282
+    ],
+    "category": "ui-elements",
+    "transparent": false,
+    "background_mode": "white",
+    "threshold": 28,
+    "border": 3,
+    "trim": false,
+    "pad": 10,
+    "max_size": 1024,
+    "keep_largest_component": false,
+    "ellipse_mask": false,
+    "note": "",
+    "output": "assets\\extracted\\ui-elements\\focus_segment_control.png",
+    "size": [
+      1024,
+      222
+    ]
+  },
+  {
+    "name": "breathe_orb",
+    "source": "main",
+    "bbox": [
+      884,
+      366,
+      1174,
+      702
+    ],
+    "category": "ui-elements",
+    "transparent": false,
+    "background_mode": "white",
+    "threshold": 28,
+    "border": 3,
+    "trim": false,
+    "pad": 10,
+    "max_size": 1280,
+    "keep_largest_component": false,
+    "ellipse_mask": false,
+    "note": "",
+    "output": "assets\\extracted\\ui-elements\\breathe_orb.png",
+    "size": [
+      1105,
+      1280
+    ]
+  },
+  {
+    "name": "focus_progress_ring",
+    "source": "secondary",
+    "bbox": [
+      786,
+      92,
+      991,
+      308
+    ],
+    "category": "ui-elements",
+    "transparent": false,
+    "background_mode": "white",
+    "threshold": 28,
+    "border": 3,
+    "trim": false,
+    "pad": 10,
+    "max_size": 1024,
+    "keep_largest_component": false,
+    "ellipse_mask": false,
+    "note": "",
+    "output": "assets\\extracted\\ui-elements\\focus_progress_ring.png",
+    "size": [
+      972,
+      1024
+    ]
+  },
+  {
+    "name": "meditate_quote_card",
+    "source": "secondary",
+    "bbox": [
+      791,
+      653,
+      1006,
+      733
+    ],
+    "category": "ui-elements",
+    "transparent": false,
+    "background_mode": "white",
+    "threshold": 28,
+    "border": 3,
+    "trim": false,
+    "pad": 10,
+    "max_size": 1024,
+    "keep_largest_component": false,
+    "ellipse_mask": false,
+    "note": "",
+    "output": "assets\\extracted\\ui-elements\\meditate_quote_card.png",
+    "size": [
+      1024,
+      381
+    ]
+  },
+  {
+    "name": "primary_button_large",
+    "source": "main",
+    "bbox": [
+      1328,
+      735,
+      1595,
+      788
+    ],
+    "category": "ui-elements",
+    "transparent": false,
+    "background_mode": "white",
+    "threshold": 28,
+    "border": 3,
+    "trim": false,
+    "pad": 10,
+    "max_size": 1024,
+    "keep_largest_component": false,
+    "ellipse_mask": false,
+    "note": "",
+    "output": "assets\\extracted\\ui-elements\\primary_button_large.png",
+    "size": [
+      1024,
+      203
+    ]
+  },
+  {
+    "name": "chip_active_pink",
+    "source": "main",
+    "bbox": [
+      35,
+      226,
+      97,
+      273
+    ],
+    "category": "ui-elements",
+    "transparent": false,
+    "background_mode": "white",
+    "threshold": 28,
+    "border": 3,
+    "trim": false,
+    "pad": 10,
+    "max_size": 512,
+    "keep_largest_component": false,
+    "ellipse_mask": false,
+    "note": "",
+    "output": "assets\\extracted\\ui-elements\\chip_active_pink.png",
+    "size": [
+      512,
+      388
+    ]
+  },
+  {
+    "name": "chip_idle_white",
+    "source": "main",
+    "bbox": [
+      103,
+      226,
+      174,
+      273
+    ],
+    "category": "ui-elements",
+    "transparent": false,
+    "background_mode": "white",
+    "threshold": 28,
+    "border": 3,
+    "trim": false,
+    "pad": 10,
+    "max_size": 512,
+    "keep_largest_component": false,
+    "ellipse_mask": false,
+    "note": "",
+    "output": "assets\\extracted\\ui-elements\\chip_idle_white.png",
+    "size": [
+      512,
+      339
+    ]
+  },
+  {
+    "name": "search_bar_input",
+    "source": "secondary",
+    "bbox": [
+      231,
+      548,
+      465,
+      590
+    ],
+    "category": "ui-elements",
+    "transparent": false,
+    "background_mode": "white",
+    "threshold": 28,
+    "border": 3,
+    "trim": false,
+    "pad": 10,
+    "max_size": 1024,
+    "keep_largest_component": false,
+    "ellipse_mask": false,
+    "note": "",
+    "output": "assets\\extracted\\ui-elements\\search_bar_input.png",
+    "size": [
+      1024,
+      184
+    ]
+  },
+  {
+    "name": "now_playing_bar",
+    "source": "main",
+    "bbox": [
+      31,
+      708,
+      383,
+      789
+    ],
+    "category": "ui-elements",
+    "transparent": false,
+    "background_mode": "white",
+    "threshold": 28,
+    "border": 3,
+    "trim": false,
+    "pad": 10,
+    "max_size": 1280,
+    "keep_largest_component": false,
+    "ellipse_mask": false,
+    "note": "",
+    "output": "assets\\extracted\\ui-elements\\now_playing_bar.png",
+    "size": [
+      1280,
+      295
+    ]
+  },
+  {
+    "name": "app-icon-1024",
+    "category": "app-icon",
+    "output": "assets\\extracted\\app-icon\\app-icon-1024.png",
+    "size": [
+      1024,
+      1024
+    ],
+    "source": "generated",
+    "bbox": null,
+    "transparent": false
+  },
+  {
+    "name": "adaptive-icon-foreground",
+    "category": "app-icon",
+    "output": "assets\\extracted\\app-icon\\adaptive-icon-foreground.png",
+    "size": [
+      1024,
+      1024
+    ],
+    "source": "generated",
+    "bbox": null,
+    "transparent": true
+  },
+  {
+    "name": "adaptive-icon-background",
+    "category": "app-icon",
+    "output": "assets\\extracted\\app-icon\\adaptive-icon-background.png",
+    "size": [
+      1024,
+      1024
+    ],
+    "source": "generated",
+    "bbox": null,
+    "transparent": false
+  },
+  {
+    "name": "adaptive-icon-monochrome",
+    "category": "app-icon",
+    "output": "assets\\extracted\\app-icon\\adaptive-icon-monochrome.png",
+    "size": [
+      1024,
+      1024
+    ],
+    "source": "generated",
+    "bbox": null,
+    "transparent": true
+  }
+]
