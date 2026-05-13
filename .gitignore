@@ -1,0 +1,15 @@
+node_modules/
+.expo/
+dist/
+*.log
+__pycache__/
+*.pyc
+tmp_*.png
+npm-debug.*
+*.jks
+*.p8
+*.p12
+*.key
+*.mobileprovision
+*.orig.*
+web-build/
