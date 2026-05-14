@@ -20,3 +20,7 @@
 - Generated four main Tab background images under `assets/generated/page-backgrounds/` for Sleep, Focus, Breathe, and Meditate.
 - Updated `constants/designAssets.ts` and the four main Tab pages to use the generated 1:1 reference-style backgrounds.
 - Verified `npm run typecheck` and `npm run lint`.
+
+## 2026-05-14
+
+- Added project README documentation covering feature scope, tech stack, setup, scripts, API source, audio state rules, Android configuration, Ubuntu 24.04 APK build path, configuration notes, and release checks.
