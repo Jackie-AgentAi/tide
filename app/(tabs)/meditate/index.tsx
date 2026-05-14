@@ -1,13 +1,39 @@
 import { Image } from 'expo-image';
 import { LinearGradient } from 'expo-linear-gradient';
 import { router } from 'expo-router';
-import { Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
+import { useMemo, useState } from 'react';
+import {
+  Pressable,
+  ScrollView,
+  StyleSheet,
+  Text,
+  View,
+  useWindowDimensions,
+} from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { StatusBar } from 'expo-status-bar';
-import { Colors, Radii, Shadows } from '@/constants/theme';
+import { Colors, Radii } from '@/constants/theme';
 import { DesignAssets } from '@/constants/designAssets';
 
-const ITEMS = [
+const MeditateUi = {
+  gradTop: '#FBF6EE',
+  gradBot: '#F5EDE3',
+  title: '#9D174D',
+  subtitle: '#57534E',
+  accentPink: '#F06292',
+  accentPinkDeep: '#EC407A',
+  cardBg: '#FFFFFF',
+} as const;
+
+type ItemKey = 'quick' | 'exam' | 'breath' | 'body';
+
+const ITEMS: {
+  key: ItemKey;
+  title: string;
+  minutes: number;
+  asset: number;
+  quote: string;
+}[] = [
   {
     key: 'quick',
     title: '快速入眠',
@@ -38,86 +64,162 @@ const ITEMS = [
   },
 ];
 
+/** 头图区纯图片高度（不含状态栏），压低以给网格留出两行空间 */
+const HERO_IMG_H = 152;
+
+const CTA_INNER_H = 52;
+const CARD_TEXT_BLOCK = 46;
+
 export default function MeditateScreen() {
   const insets = useSafeAreaInsets();
+  const { width, height } = useWindowDimensions();
   const tabBarOffset = 72 + insets.bottom;
+  const [selectedKey, setSelectedKey] = useState<ItemKey>('quick');
+
+  const selected = useMemo(
+    () => ITEMS.find((i) => i.key === selectedKey) ?? ITEMS[0],
+    [selectedKey],
+  );
+
+  const horizontalPad = 20;
+  const gridGap = 12;
+  const tileW = useMemo(() => {
+    return (width - horizontalPad * 2 - gridGap) / 2;
+  }, [width]);
+
+  /** 封面正方形边长：取列宽与「两行卡片 + 文案」可容纳高度中的较小值，保证一屏可见两行 */
+  const coverSide = useMemo(() => {
+    const ctaReserve = CTA_INNER_H + 6;
+    const gridViewport =
+      height -
+      insets.top -
+      HERO_IMG_H -
+      ctaReserve -
+      tabBarOffset -
+      8;
+    const rowGap = gridGap;
+    const twoRowsCap = Math.floor(
+      (gridViewport - rowGap - 2 * CARD_TEXT_BLOCK - 20) / 2,
+    );
+    const fromLayout = Math.floor(tileW);
+    return Math.max(80, Math.min(fromLayout, Math.max(80, twoRowsCap)));
+  }, [height, insets.top, tabBarOffset, tileW, gridGap]);
+
+  const onStart = () => {
+    router.push({
+      pathname: '/meditate/complete',
+      params: {
+        subtitle: `${selected.title} · ${selected.minutes} 分钟`,
+        quote: selected.quote,
+      },
+    });
+  };
 
   return (
     <View style={styles.root}>
       <StatusBar style="dark" />
       <LinearGradient
-        colors={['#FBF6EE', '#EFE7DC']}
-        style={StyleSheet.absoluteFill}
+        colors={[MeditateUi.gradTop, MeditateUi.gradBot]}
+        style={styles.bgGradient}
         start={{ x: 0.5, y: 0 }}
         end={{ x: 0.5, y: 1 }}
       />
       <Image
         source={DesignAssets.meditatePageBackground}
-        style={StyleSheet.absoluteFill}
+        style={styles.bgPhoto}
         contentFit="cover"
+        pointerEvents="none"
       />
 
-      <ScrollView
-        showsVerticalScrollIndicator={false}
-        contentContainerStyle={{
-          paddingBottom: tabBarOffset + 110,
-        }}
-      >
-        <View style={styles.heroWrap}>
+      <View style={styles.column}>
+        <View style={[styles.heroBlock, { height: insets.top + HERO_IMG_H }]}>
           <Image
             source={DesignAssets.meditateBanner}
-            style={styles.hero}
+            style={StyleSheet.absoluteFillObject}
             contentFit="cover"
           />
           <LinearGradient
-            colors={['transparent', 'rgba(251,246,238,0.65)', Colors.meditateBg]}
-            style={styles.heroFade}
+            colors={['transparent', 'rgba(255,255,255,0.08)', 'rgba(251,246,238,0.42)']}
+            locations={[0, 0.55, 1]}
+            style={StyleSheet.absoluteFillObject}
+            pointerEvents="none"
           />
-          <View style={styles.heroTitles}>
+          <View
+            style={[
+              styles.heroTitles,
+              { top: insets.top + 8, paddingHorizontal: horizontalPad },
+            ]}
+          >
             <Text style={styles.screenTitle}>冥想</Text>
             <Text style={styles.screenSubtitle}>内在平静，回归当下</Text>
           </View>
         </View>
 
-        <View style={{ paddingHorizontal: 18 }}>
-          <View style={styles.grid}>
-            {ITEMS.map((item) => (
-              <View key={item.key} style={styles.tileWrap}>
+        <ScrollView
+          style={styles.gridScroll}
+          contentContainerStyle={[
+            styles.gridScrollInner,
+            {
+              paddingHorizontal: horizontalPad,
+              paddingTop: 10,
+              paddingBottom: 8,
+            },
+          ]}
+          showsVerticalScrollIndicator={false}
+        >
+          <View style={[styles.grid, { columnGap: gridGap, rowGap: gridGap }]}>
+            {ITEMS.map((item) => {
+              const isSel = item.key === selectedKey;
+              return (
                 <Pressable
-                  style={styles.tile}
-                  onPress={() =>
-                    router.push({
-                      pathname: '/meditate/complete',
-                      params: {
-                        subtitle: `${item.title} · ${item.minutes} 分钟`,
-                        quote: item.quote,
-                      },
-                    })
-                  }
+                  key={item.key}
+                  onPress={() => setSelectedKey(item.key)}
+                  style={[
+                    styles.card,
+                    { width: tileW },
+                    isSel && styles.cardSelected,
+                  ]}
                 >
-                  <Image
-                    source={item.asset}
-                    style={styles.tileImg}
-                    contentFit="cover"
-                  />
+                  <View
+                    style={[
+                      styles.cardImageShell,
+                      {
+                        width: coverSide,
+                        height: coverSide,
+                        alignSelf: 'center',
+                      },
+                    ]}
+                  >
+                    <Image
+                      source={item.asset}
+                      style={styles.cardImage}
+                      contentFit="cover"
+                    />
+                  </View>
+                  <View style={styles.cardBody}>
+                    <Text style={styles.cardTitle} numberOfLines={1}>
+                      {item.title}
+                    </Text>
+                    <Text style={styles.cardMeta}>{item.minutes} 分钟</Text>
+                  </View>
                 </Pressable>
-                <Text style={styles.tileTitle}>{item.title}</Text>
-                <Text style={styles.tileMeta}>{item.minutes} 分钟</Text>
-              </View>
-            ))}
+              );
+            })}
           </View>
-        </View>
-      </ScrollView>
+        </ScrollView>
 
-      <View style={[styles.ctaDock, { bottom: tabBarOffset + 10 }]}>
-        <Pressable style={styles.ctaPress}>
-          <Image
-            source={DesignAssets.primaryButton}
-            style={styles.ctaBg}
-            contentFit="fill"
-          />
-          <Text style={styles.ctaText}>开始</Text>
-        </Pressable>
+        <View style={[styles.ctaBar, { paddingBottom: tabBarOffset + 2 }]}>
+          <Pressable onPress={onStart} style={styles.ctaOuter}>
+            <LinearGradient
+              colors={[MeditateUi.accentPink, MeditateUi.accentPinkDeep]}
+              start={{ x: 0, y: 0.5 }}
+              end={{ x: 1, y: 0.5 }}
+              style={styles.ctaGradient}
+            >
+              <Text style={styles.ctaText}>开始</Text>
+            </LinearGradient>
+          </Pressable>
+        </View>
       </View>
     </View>
   );
@@ -128,101 +230,132 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: Colors.meditateBg,
   },
-  heroWrap: {
-    width: '100%',
-    marginBottom: 18,
-    position: 'relative',
-  },
-  hero: {
-    width: '100%',
-    height: 200,
-    opacity: 0,
-  },
-  heroFade: {
+  bgGradient: {
     ...StyleSheet.absoluteFillObject,
-    top: undefined,
-    height: '55%',
-    bottom: 0,
+    zIndex: 0,
+  },
+  bgPhoto: {
+    ...StyleSheet.absoluteFillObject,
+    zIndex: 1,
+    opacity: 0.22,
+  },
+  column: {
+    flex: 1,
+    zIndex: 2,
+    backgroundColor: 'transparent',
+  },
+  heroBlock: {
+    width: '100%',
+    position: 'relative',
+    overflow: 'hidden',
   },
   heroTitles: {
     position: 'absolute',
-    left: 18,
-    right: 18,
-    bottom: 22,
+    left: 0,
+    right: 0,
   },
   screenTitle: {
-    fontSize: 34,
+    fontSize: 36,
     fontWeight: '800',
-    color: Colors.meditateTitle,
-    letterSpacing: 1,
-    textShadowColor: 'rgba(255,255,255,0.65)',
+    color: MeditateUi.title,
+    letterSpacing: 0.5,
+    textShadowColor: 'rgba(255,255,255,0.75)',
     textShadowOffset: { width: 0, height: 1 },
-    textShadowRadius: 8,
+    textShadowRadius: 10,
   },
   screenSubtitle: {
-    marginTop: 8,
+    marginTop: 6,
     fontSize: 14,
-    color: Colors.textSecondary,
     fontWeight: '600',
-    marginBottom: 0,
-    textShadowColor: 'rgba(255,255,255,0.55)',
+    color: MeditateUi.subtitle,
+    textShadowColor: 'rgba(255,255,255,0.6)',
     textShadowOffset: { width: 0, height: 1 },
     textShadowRadius: 6,
+  },
+  gridScroll: {
+    flex: 1,
+    minHeight: 120,
+  },
+  gridScrollInner: {
+    flexGrow: 1,
   },
   grid: {
     flexDirection: 'row',
     flexWrap: 'wrap',
-    justifyContent: 'space-between',
-    rowGap: 18,
-    marginTop: 4,
+    justifyContent: 'flex-start',
   },
-  tileWrap: {
-    width: '48%',
-  },
-  tile: {
+  card: {
+    backgroundColor: MeditateUi.cardBg,
     borderRadius: Radii.lg,
     overflow: 'hidden',
-    ...Shadows.neumorphicCard,
-    backgroundColor: '#fff',
+    borderWidth: 2,
+    borderColor: 'transparent',
+    shadowColor: '#7C6A5A',
+    shadowOffset: { width: 0, height: 8 },
+    shadowOpacity: 0.1,
+    shadowRadius: 16,
+    elevation: 6,
   },
-  tileImg: {
+  cardSelected: {
+    borderColor: MeditateUi.accentPink,
+    shadowColor: MeditateUi.accentPink,
+    shadowOpacity: 0.22,
+    shadowRadius: 18,
+    elevation: 8,
+  },
+  cardImageShell: {
+    backgroundColor: '#F3EDE6',
+    borderTopLeftRadius: Radii.lg,
+    borderTopRightRadius: Radii.lg,
+    overflow: 'hidden',
+  },
+  cardImage: {
     width: '100%',
-    aspectRatio: 1,
+    height: '100%',
   },
-  tileTitle: {
-    marginTop: 10,
+  cardBody: {
+    paddingHorizontal: 8,
+    paddingTop: 8,
+    paddingBottom: 10,
+  },
+  cardTitle: {
     fontSize: 15,
     fontWeight: '800',
     color: Colors.textPrimary,
     textAlign: 'center',
   },
-  tileMeta: {
+  cardMeta: {
     marginTop: 4,
     fontSize: 12,
     fontWeight: '600',
     color: Colors.textSecondary,
     textAlign: 'center',
   },
-  ctaDock: {
-    position: 'absolute',
-    left: 18,
-    right: 18,
-    height: 56,
-    justifyContent: 'center',
+  ctaBar: {
+    flexShrink: 0,
+    paddingHorizontal: 20,
+    paddingTop: 4,
+    backgroundColor: 'transparent',
   },
-  ctaPress: {
-    height: 54,
-    justifyContent: 'center',
+  ctaOuter: {
+    borderRadius: 999,
+    overflow: 'hidden',
+    shadowColor: MeditateUi.accentPink,
+    shadowOffset: { width: 0, height: 8 },
+    shadowOpacity: 0.35,
+    shadowRadius: 14,
+    elevation: 10,
+  },
+  ctaGradient: {
+    paddingVertical: 14,
     alignItems: 'center',
-  },
-  ctaBg: {
-    ...StyleSheet.absoluteFillObject,
-    borderRadius: Radii.xl,
+    justifyContent: 'center',
+    borderRadius: 999,
   },
   ctaText: {
     fontSize: 17,
     fontWeight: '900',
-    color: Colors.white,
-    letterSpacing: 2,
+    color: '#FFFFFF',
+    letterSpacing: 4,
   },
 });

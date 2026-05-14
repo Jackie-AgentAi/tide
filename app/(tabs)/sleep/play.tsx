@@ -14,7 +14,7 @@ import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { StatusBar } from 'expo-status-bar';
 import {
   SLEEP_LOCAL_FALLBACK,
-  pickSleepCover,
+  resolveSleepImageSource,
   sleepSoundIndex,
 } from '@/constants/sleepSoundDefaults';
 import { Colors, Radii, Shadows } from '@/constants/theme';
@@ -95,7 +95,7 @@ export default function SleepPlayScreen() {
     });
   };
 
-  const cover = pickSleepCover(idx, item);
+  const cover = resolveSleepImageSource(item, idx);
 
   return (
     <View style={styles.root}>

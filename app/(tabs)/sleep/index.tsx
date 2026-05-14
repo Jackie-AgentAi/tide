@@ -1,6 +1,7 @@
 import { Ionicons } from '@expo/vector-icons';
 import { LinearGradient } from 'expo-linear-gradient';
 import { router } from 'expo-router';
+import { useFonts, MaShanZheng_400Regular } from '@expo-google-fonts/ma-shan-zheng';
 import { useCallback, useMemo, useState } from 'react';
 import {
   ActivityIndicator,
@@ -17,7 +18,7 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import { StatusBar } from 'expo-status-bar';
 import {
   SLEEP_LOCAL_FALLBACK,
-  pickSleepCover,
+  resolveSleepImageSource,
   sleepSoundIndex,
 } from '@/constants/sleepSoundDefaults';
 import { DesignAssets } from '@/constants/designAssets';
@@ -53,8 +54,8 @@ const HERO_HEIGHT_RATIO = 0.25;
 
 /** Tab 场景可视区底边已在自定义 Tab 栏之上，仅需与底缘少量间距 */
 const MINI_PLAYER_BOTTOM_GAP = 12;
-/** 迷你播放器占位高度（含上下内边距），用于列表底部防遮挡 */
-const MINI_PLAYER_CLEARANCE = 92;
+/** 迷你播放器占位：需大于实际条高度 + 与最后一行卡片的呼吸间距（避免遮挡） */
+const MINI_PLAYER_CLEARANCE = 136;
 
 const CHIPS = ['全部', '自然', '动物', '城市', '舒缓'] as const;
 
@@ -76,7 +77,22 @@ function chipMatches(chip: (typeof CHIPS)[number], sound: AmbientSound) {
   return true;
 }
 
+const FONT_HAND = 'MaShanZheng_400Regular';
+
+function SleepHeroMoon() {
+  return (
+    <View style={styles.heroOrnament} pointerEvents="none">
+      <View style={styles.heroMoonHalo} />
+      <View style={styles.heroMoonHaloOuter} />
+      <View style={styles.heroMoonDisc} />
+      <View style={styles.heroMoonMask} />
+    </View>
+  );
+}
+
 export default function SleepScreen() {
+  const [fontsLoaded] = useFonts({ MaShanZheng_400Regular });
+  const fontHand = fontsLoaded ? { fontFamily: FONT_HAND } : undefined;
   const { width, height: windowHeight } = useWindowDimensions();
   const { data, loading, error, reload } = useSounds();
   const [chip, setChip] = useState<(typeof CHIPS)[number]>('全部');
@@ -98,14 +114,6 @@ export default function SleepScreen() {
 
   const displayList = filtered.length ? filtered : sounds;
 
-  const coverSourceById = useMemo(() => {
-    const next = new Map<string, ReturnType<typeof pickSleepCover>>();
-    displayList.forEach((sound, index) => {
-      next.set(sound.id, pickSleepCover(index, sound));
-    });
-    return next;
-  }, [displayList]);
-
   const sleepTransportId =
     playbackKind === 'sleep' ? playbackId : null;
 
@@ -124,7 +132,7 @@ export default function SleepScreen() {
   const dockIdx = sleepSoundIndex(displayList, dockSound?.id);
   const dockThumb = useMemo(() => {
     const sound = dockSound ?? displayList[0];
-    return pickSleepCover(dockIdx, sound);
+    return resolveSleepImageSource(sound, dockIdx);
   }, [displayList, dockIdx, dockSound]);
 
   const gap = 12;
@@ -151,7 +159,7 @@ export default function SleepScreen() {
       StyleSheet.create({
         scrollContent: {
           paddingTop: 6,
-          paddingBottom: MINI_PLAYER_BOTTOM_GAP + MINI_PLAYER_CLEARANCE + 16,
+          paddingBottom: MINI_PLAYER_BOTTOM_GAP + MINI_PLAYER_CLEARANCE + 28,
           paddingHorizontal: horizontalPad,
         },
         gridCell: {
@@ -230,8 +238,15 @@ export default function SleepScreen() {
           pointerEvents="none"
         />
         <SafeAreaView edges={['top']} style={styles.heroSafeArea} pointerEvents="box-none">
-          <Text style={styles.screenTitle}>睡眠</Text>
-          <Text style={styles.screenSubtitle}>选择白噪音，安静入睡</Text>
+          <View style={styles.heroHeaderRow}>
+            <View style={styles.heroTitleBlock}>
+              <Text style={styles.screenTitle}>睡眠</Text>
+              <Text style={[styles.screenSubtitle, fontHand]}>
+                选择白噪音，安静入睡
+              </Text>
+            </View>
+            <SleepHeroMoon />
+          </View>
         </SafeAreaView>
       </View>
 
@@ -281,7 +296,7 @@ export default function SleepScreen() {
       />
       <Image
         source={DesignAssets.sleepPageBackground}
-        style={StyleSheet.absoluteFill}
+        style={styles.pageBackdropImage}
         resizeMode="cover"
       />
 
@@ -318,8 +333,7 @@ export default function SleepScreen() {
                 const isCurrentSleep =
                   playbackKind === 'sleep' && playbackId === item.id;
                 const showPlayingBadge = isCurrentSleep && playbackPlaying;
-                const source =
-                  coverSourceById.get(item.id) ?? pickSleepCover(index, item);
+                const source = resolveSleepImageSource(item, index);
                 return (
                   <Pressable
                     onPress={() => openPlay(item)}
@@ -328,6 +342,7 @@ export default function SleepScreen() {
                     <View
                       style={[
                         styles.soundCard,
+                        isCurrentSleep ? styles.soundCardSelected : null,
                       ]}
                     >
                       <View style={styles.soundCardImageShell}>
@@ -347,11 +362,11 @@ export default function SleepScreen() {
                           </View>
                         ) : null}
                       </View>
-                      {isCurrentSleep ? (
-                        <View style={styles.soundCardActiveRing} pointerEvents="none" />
-                      ) : null}
                       <View style={styles.soundCardBody}>
-                        <Text style={styles.soundCardTitle} numberOfLines={1}>
+                        <Text
+                          style={[styles.soundCardTitle, fontHand]}
+                          numberOfLines={1}
+                        >
                           {item.name}
                         </Text>
                         <Text style={styles.soundCardMeta}>30 分钟</Text>
@@ -378,7 +393,7 @@ export default function SleepScreen() {
                   />
                   <View style={styles.playerTexts}>
                     <Text style={styles.playerLabel}>当前播放</Text>
-                    <Text style={styles.playerTitle} numberOfLines={1}>
+                    <Text style={[styles.playerTitle, fontHand]} numberOfLines={1}>
                       {dockTitleLine}
                     </Text>
                   </View>
@@ -416,6 +431,10 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: SleepUi.gradientBottom,
   },
+  pageBackdropImage: {
+    ...StyleSheet.absoluteFillObject,
+    opacity: 0.42,
+  },
   fixedTopStack: {
     zIndex: 2,
     marginBottom: 4,
@@ -429,7 +448,7 @@ const styles = StyleSheet.create({
   },
   heroNightImage: {
     ...StyleSheet.absoluteFillObject,
-    opacity: 0.8,
+    opacity: 0.72,
   },
   heroBottomFade: {
     position: 'absolute',
@@ -439,27 +458,82 @@ const styles = StyleSheet.create({
   },
   heroSafeArea: {
     flex: 1,
-    paddingHorizontal: 28,
+    paddingHorizontal: 20,
     justifyContent: 'flex-start',
+  },
+  heroHeaderRow: {
+    flexDirection: 'row',
+    alignItems: 'flex-start',
+    justifyContent: 'space-between',
+    marginTop: 4,
+  },
+  heroTitleBlock: {
+    flex: 1,
+    paddingRight: 10,
+    maxWidth: '68%',
+  },
+  heroOrnament: {
+    width: 88,
+    height: 88,
+    marginTop: -2,
+    marginRight: -6,
     alignItems: 'center',
+    justifyContent: 'center',
+  },
+  heroMoonHaloOuter: {
+    position: 'absolute',
+    width: 78,
+    height: 78,
+    borderRadius: 39,
+    backgroundColor: 'rgba(168,120,220,0.35)',
+  },
+  heroMoonHalo: {
+    position: 'absolute',
+    width: 64,
+    height: 64,
+    borderRadius: 32,
+    backgroundColor: 'rgba(200,150,235,0.45)',
+  },
+  heroMoonDisc: {
+    width: 44,
+    height: 44,
+    borderRadius: 22,
+    backgroundColor: '#FFE082',
+    shadowColor: '#FFC107',
+    shadowOffset: { width: 0, height: 0 },
+    shadowOpacity: 0.55,
+    shadowRadius: 12,
+    elevation: 6,
+  },
+  heroMoonMask: {
+    position: 'absolute',
+    width: 38,
+    height: 38,
+    borderRadius: 19,
+    backgroundColor: SleepUi.gradientTop,
+    right: 18,
+    top: 26,
   },
   screenTitle: {
-    marginTop: 8,
-    fontSize: 44,
-    fontWeight: '700',
-    color: SleepUi.heroTitleLight,
-    letterSpacing: 1,
-    textAlign: 'center',
+    marginTop: 4,
+    fontSize: 42,
+    fontWeight: '800',
+    color: '#E8E0F4',
+    letterSpacing: 0.5,
+    textAlign: 'left',
+    textShadowColor: 'rgba(255,255,255,0.35)',
+    textShadowOffset: { width: 0, height: 0 },
+    textShadowRadius: 14,
   },
   screenSubtitle: {
-    marginTop: 12,
-    fontSize: 15,
-    fontWeight: '500',
-    color: SleepUi.heroSubtitleWhite,
-    letterSpacing: 0.35,
-    lineHeight: 22,
-    textAlign: 'center',
-    maxWidth: 320,
+    marginTop: 10,
+    fontSize: 17,
+    fontWeight: '400',
+    color: 'rgba(245,240,255,0.88)',
+    letterSpacing: 0.5,
+    lineHeight: 26,
+    textAlign: 'left',
+    maxWidth: 280,
   },
   chipOverlapWrap: {
     marginTop: -28,
@@ -534,24 +608,22 @@ const styles = StyleSheet.create({
   },
   flatListContent: {
     gap: 12,
-    paddingBottom: 8,
+    paddingBottom: 28,
   },
   soundCard: {
     borderRadius: 22,
     backgroundColor: '#FFFFFF',
     overflow: 'hidden',
+    borderWidth: 2,
+    borderColor: 'transparent',
     shadowColor: '#6B4E9E',
     shadowOffset: { width: 0, height: 8 },
     shadowOpacity: 0.12,
     shadowRadius: 16,
     elevation: 8,
   },
-  soundCardActiveRing: {
-    ...StyleSheet.absoluteFillObject,
-    borderWidth: 2,
+  soundCardSelected: {
     borderColor: SleepUi.accentPink,
-    borderRadius: 22,
-    zIndex: 2,
   },
   soundCardImageShell: {
     width: '100%',
@@ -560,6 +632,7 @@ const styles = StyleSheet.create({
     borderTopLeftRadius: 22,
     borderTopRightRadius: 22,
     overflow: 'hidden',
+    position: 'relative',
   },
   soundCardImage: {
     width: '100%',
@@ -582,7 +655,8 @@ const styles = StyleSheet.create({
     shadowOffset: { width: 0, height: 2 },
     shadowOpacity: 0.15,
     shadowRadius: 5,
-    elevation: 3,
+    elevation: 6,
+    zIndex: 8,
   },
   equalizerBars: {
     height: 18,
@@ -610,8 +684,8 @@ const styles = StyleSheet.create({
     paddingBottom: 14,
   },
   soundCardTitle: {
-    fontSize: 15,
-    fontWeight: '700',
+    fontSize: 16,
+    fontWeight: '400',
     color: SleepUi.cardTitle,
     textAlign: 'center',
   },

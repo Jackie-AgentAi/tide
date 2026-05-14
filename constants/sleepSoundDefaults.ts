@@ -1,3 +1,4 @@
+import type { ImageSourcePropType } from 'react-native';
 import { DesignAssets } from '@/constants/designAssets';
 import type { AmbientSound } from '@/types/sounds';
 
@@ -35,6 +36,16 @@ export const SLEEP_LOCAL_COVERS = [
   DesignAssets.sleepCoverForest,
   DesignAssets.sleepCoverCat,
 ] as const;
+
+/** 列表/播放器封面：优先使用接口返回的远程图，避免名称与本地占位图错位 */
+export function resolveSleepImageSource(
+  item: AmbientSound,
+  index: number,
+): ImageSourcePropType {
+  const c = item.cover?.trim();
+  if (c) return { uri: c };
+  return pickSleepCover(index, item);
+}
 
 export function pickSleepCover(index: number, item: AmbientSound) {
   const name = item.name;
